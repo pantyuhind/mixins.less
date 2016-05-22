@@ -1,3 +1,3 @@
 # mixins.less
-Коллекция less примесей
+LESS mixins library
 
