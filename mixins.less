@@ -1,0 +1,538 @@
+// ******* MIXIN.LESS ******* //
+
+// ******* TRANSITION ******* //
+
+// transition
+.transition(@property : all, @duration : .25s, @ease : ease)
+{
+  -webkit-transition: @property @duration @ease;
+     -moz-transition: @property @duration @ease;
+      -ms-transition: @property @duration @ease;
+          transition: @property @duration @ease;
+}
+
+// transition property
+.transition-property(@property : all)
+{
+  -webkit-transition-property: @property;
+     -moz-transition-property: @property;
+      -ms-transition-property: @property;
+          transition-property: @property;
+}
+
+// transition duration
+.transition-duration(@duration : 0s)
+{
+  -webkit-transition-duration: @duration;
+     -moz-transition-duration: @duration;
+      -ms-transition-duration: @duration;
+          transition-duration: @duration;
+}
+
+// transition delay
+.transition-delay(@delay : 0s)
+{
+  -webkit-transition-delay: @delay;
+     -moz-transition-delay: @delay;
+      -ms-transition-delay: @delay;
+          transition-delay: @delay;
+}
+
+// transition timing function
+.transition-timing(@ease : ease)
+{
+  -webkit-transition-timing-function: @ease;
+     -moz-transition-timing-function: @ease;
+      -ms-transition-timing-function: @ease;
+          transition-timing-function: @ease;
+}
+
+
+
+// ******* ANIMATION ******* //
+
+// animation
+.animation(@name, @duration: .25s, @ease: ease, @count : 1)
+{
+  -webkit-animation: @name @duration @ease @count;
+     -moz-animation: @name @duration @ease @count;
+      -ms-animation: @name @duration @ease @count;
+       -o-animation: @name @duration @ease @count;
+          animation: @name @duration @ease @count;
+}
+
+// animation name
+.animation-name(@name)
+{
+  -webkit-animation-name: @name;
+     -moz-animation-name: @name;
+      -ms-animation-name: @name;
+       -o-animation-name: @name;
+          animation-name: @name;
+}
+
+// animation delay
+.animation-delay(@delay : 0s)
+{
+  -webkit-animation-delay: @delay;
+     -moz-animation-delay: @delay;
+      -ms-animation-delay: @delay;
+       -o-animation-delay: @delay;
+          animation-delay: @delay;
+}
+
+// animation duration
+.animation-duration(@duration : .25s)
+{
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -ms-animation-duration: @duration;
+  -o-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+// animation timing function
+.animation-timing(@ease : ease)
+{
+  -webkit-animation-timing-function: @ease;
+     -moz-animation-timing-function: @ease;
+      -ms-animation-timing-function: @ease;
+       -o-animation-timing-function: @ease;
+          animation-timing-function: @ease;
+}
+
+// animation iteration count
+.animation-count(@count : 1)
+{
+  -webkit-animation-iteration-count: @count;
+     -moz-animation-iteration-count: @count;
+      -ms-animation-iteration-count: @count;
+       -o-animation-iteration-count: @count;
+          animation-iteration-count: @count;
+}
+
+// animation direction
+.animation-direction(@dir : normal)
+{
+  -webkit-animation-direction: @dir;
+     -moz-animation-direction: @dir;
+      -ms-animation-direction: @dir;
+       -o-animation-direction: @dir;
+          animation-direction: @dir;
+
+}
+
+// add keyframes keyword
+.keyframes(@name, @frames)
+{
+  @-webkit-keyframes @name
+  {
+    @frames();
+  }
+  @-moz-keyframes @name
+  {
+    @frames();
+  }
+  @keyframes @name
+  {
+    @frames();
+
+  }
+}
+
+
+
+// ******* CSS TRANSFORM AND 3D ******* //
+
+// transform
+.transform(...)
+{
+  -webkit-transform: @arguments;
+     -moz-transform: @arguments;
+      -ms-transform: @arguments;
+       -o-transform: @arguments;
+          transform: @arguments;
+}
+
+// transform-style
+.transform-style(@style : none)
+{
+  -webkit-transform-style: @style;
+     -moz-transform-style: @style;
+      -ms-transform-style: @style;
+       -o-transform-style: @style;
+          transform-style: @style;
+}
+
+// rotate
+.rotate(@x : 0)
+{
+  .transform( rotate(@x * 1deg) );
+}
+
+// rotateY
+.rotateY(@y : 0)
+{
+  .transform( rotateY(@y * 1deg) );
+}
+
+// rotateX
+.rotate(@x : 0)
+{
+  .transform( rotateX(@x * 1deg) );
+}
+
+// translate
+.translate(@x : 0, @y : 0)
+{
+  .transform( translate(@x, @y) );
+}
+
+// translateX
+.translateX(@x : 0)
+{
+  .transform( translateX(@x) );
+}
+
+// translateY
+.translateY(@y : 0)
+{
+  .transform( translateY(@y) );
+}
+
+// translateZ
+.translateZ(@z : 0)
+{
+  .transform( translateZ(@z) );
+}
+
+// scale
+.scale(@ratio : 1)
+{
+  .transform( scale(@ratio) );
+}
+
+// scaleX
+.scaleX(@x : 1)
+{
+  .transform( scaleX(@x) );
+}
+
+// scaleY
+.scaleY(@y : 1)
+{
+  .transform( scaleY(@y) );
+}
+
+// skewX
+.skewX(@x : 0)
+{
+  .transform( skewX(@x) );
+}
+
+// skewY
+.skewY(@y : 0)
+{
+  .transform( skewY(@y) );
+}
+
+// perspective
+.perspective(@x : 0)
+{
+  -webkit-perspective: @x;
+     -moz-perspective: @x;
+      -ms-perspective: @x;
+       -o-perspective: @x;
+          perspective: @x;
+}
+
+// transform origin
+.transform-origin(@x : 0, @y : 0)
+{
+  -webkit-transform-origin: @x @y;
+     -moz-transform-origin: @x @y;
+      -ms-transform-origin: @x @y;
+       -o-transform-origin: @x @y;
+          transform-origin: @x @y;
+}
+
+// backface visibility
+.backface(@visible : none)
+{
+  -webkit-backface-visibility: @visible;
+     -moz-backface-visibility: @visible;
+      -ms-backface-visibility: @visible;
+          backface-visibility: @visible;
+}
+
+
+
+// ******* GRADIENT ******* //
+
+// gradient from top to bottom
+.gradient(@start, @stop, @dir : top)
+{
+  background: @start; // >= IE9
+  background: -webkit-linear-gradient(@dir, @start, @stop);
+  background:    -moz-linear-gradient(@dir, @start, @stop);
+  background:      -o-linear-gradient(@dir, @start, @stop);
+  background:         linear-gradient(@dir, @start, @stop);
+}
+
+
+
+// ******* VENDOR PREFIX ******* //
+
+// text un selectable
+.no-select()
+{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+// background size
+.bsize(@size : cover)
+{
+  -webkit-background-size: @size;
+  background-size: @size;
+}
+
+// background clip
+.bclip(@clip : border-box)
+{
+  -webkit-background-clip: @clip;
+  -moz-background-clip: @clip;
+  background-clip: @clip;
+}
+
+// remove platform specific styling
+.appearance(@param : none)
+{
+  -webkit-appearance: @param;
+  -moz-appearance: @param;
+  appearance: @param;
+}
+
+// style placeholder text
+.placeholder(@color : black)
+{
+  &::-webkit-input-placeholder
+  {
+    color: @color;
+  }
+  &::-moz-placeholder
+  {
+    color: @color;
+  }
+  &:-ms-input-placeholder
+  {
+    color: @color;
+  }
+}
+
+// border-box
+.box(@box : border-box)
+{
+  -webkit-box-sizing: @box;
+  -moz-box-sizing: @box;
+  box-sizing: @box;
+}
+
+// line clamp
+.clamp(@count : 2, @orient : vertical)
+{
+  display: -webkit-box;
+  -webkit-line-clamp: @count;
+  -webkit-box-orient: @orient;
+}
+
+// blur
+.blur(@x)
+{
+  -webkit-filter: blur(@x);
+  filter: blur(@x);
+}
+
+// full screen
+.full-screen(@style)
+{
+  :-webkit-full-screen
+  {
+    @style();
+  }
+  :-moz-full-screen
+  {
+    @style();
+  }
+  :full-screen
+  {
+    @style();
+  }
+}
+
+
+
+// ******* flexbox ******* //
+
+// flexbox container
+.flex()
+{
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// space between
+.space-between()
+{
+  .flex();
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+// flex start
+.flex-start()
+{
+  .flex();
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+// flex end
+.flex-end()
+{
+  .flex();
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+// flex center
+.flex-center()
+{
+  .flex();
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+// space around
+.space-around()
+{
+  .flex();
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+
+
+// ******* FOREACH ******* //
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+
+
+// ******* CSS RECIPES ******* //
+
+// render an ellipsis ("...") to represent clipped text
+.ellipsis()
+{
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  -ms-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+}
+
+// flip horizontal
+.flipH()
+{
+  .scaleX(-1);
+}
+
+// disable transition
+.no-transition()
+{
+  .transition-delay(0s) !important;
+  .transition-duration(0s) !important;
+}
+
+// disable animattion
+.no-animation()
+{
+  .animation-name(none) !important;
+}
+
+// clearfix
+.clearfix()
+{
+  &:after
+  {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+// vertical center align (from parent)
+.vhelp()
+{
+  &:after
+  {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    content: '';
+  }
+}
+
+// div align justify
+.justify()
+{
+  text-align: justify;
+  line-height: 0;
+  text-justify: newspaper;
+
+  & > *
+  {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  &:after
+  {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    content: '';
+    display: inline-block;
+  }
+}
+
+// Set background image at base64
+// You need to have @img_folder variable (path to image folder)
+// Sample:
+// @img_folder : '../../x/i/';
+.data-uri(@name : '', @pos : 50%, @repeat : no-repeat)
+{
+  background: @repeat @pos data-uri('@{img_folder}@{name}');
+}
