@@ -1,0 +1,17 @@
+@import "http://pantyuhind.github.io/mixins.less/include/mixins.less";
+
+@fadeIn:
+{
+	0% {  opacity: 0; }
+	100% { opacity: 1; }
+};
+
+.keyframes(fadeIn, @fadeIn);
+
+.selector
+{
+  .rotate(180deg);
+  .box();
+  .space-between();
+  .animation(fadeIn, 2s, ease-in);
+}

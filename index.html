@@ -40,11 +40,20 @@
             <p>
 
 <pre>
+@fadeIn:
+{
+	0% {  opacity: 0; }
+	100% { opacity: 1; }
+};
+
+.keyframes(fadeIn, @fadeIn);
+
 .selector
 {
-    .transition(top, 2s, ease-in);
-    .space-between();
-    .box();
+  .rotate(180deg);
+  .box();
+  .space-between();
+  .animation(fadeIn, 2s, ease-in);
 }
 </pre>
             </p>
@@ -53,12 +62,44 @@
         <h3>CSS</h3>
 
 <pre>
-.selector
-{
-  -webkit-transition: top 2s ease-in;
-  -moz-transition: top 2s ease-in;
-  -ms-transition: top 2s ease-in;
-  transition: top 2s ease-in;
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.selector {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -68,9 +109,11 @@
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-animation: fadeIn 2s ease-in 1;
+  -moz-animation: fadeIn 2s ease-in 1;
+  -ms-animation: fadeIn 2s ease-in 1;
+  -o-animation: fadeIn 2s ease-in 1;
+  animation: fadeIn 2s ease-in 1;
 }
 </pre>
 
